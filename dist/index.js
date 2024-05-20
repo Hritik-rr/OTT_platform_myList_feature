@@ -62,7 +62,10 @@ app.post('/movies', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             actors
         });
         yield newMovie.save();
-        res.status(201).json(newMovie);
+        res.status(201).json({
+            message: "New data added in Movies collection.",
+            data: newMovie
+        });
     }
     catch (err) {
         console.log(err);

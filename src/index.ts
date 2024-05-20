@@ -32,7 +32,10 @@ app.post('/movies', async (req: Request, res: Response) => {
     });
 
     await newMovie.save();
-    res.status(201).json(newMovie);
+    res.status(201).json({
+      message: "New data added in Movies collection.",
+      data: newMovie
+    })
   } catch (err) {
     console.log(err)
     res.status(500).json({ message: "Error" });
