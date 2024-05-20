@@ -1,6 +1,6 @@
 // src/models/TVShow.ts
 import mongoose, { Schema, Document } from 'mongoose';
-import { Genre } from './types';
+import { Genre } from './GenreTypes';
 
 export interface ITVShow extends Document {
   title: string;

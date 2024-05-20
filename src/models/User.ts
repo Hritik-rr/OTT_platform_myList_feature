@@ -1,6 +1,6 @@
 // src/models/User.ts
 import mongoose, { Schema, Document } from 'mongoose';
-import { Genre } from './types';
+import { Genre } from './GenreTypes';
 
 export interface IUser extends Document {
   username: string;
