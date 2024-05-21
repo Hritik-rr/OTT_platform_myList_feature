@@ -1,4 +1,3 @@
-import express from 'express';
 import { addMovie } from '../controllers/MovieController';
 import { Router } from 'express';
 

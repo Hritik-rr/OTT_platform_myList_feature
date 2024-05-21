@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import Movie, {IMovie} from '../models/Movie';
 
-
 export const addMovie = async (req: Request, res: Response) => {
     const { title, description, genres, releaseDate, director, actors } = req.body;
   
