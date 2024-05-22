@@ -42,5 +42,8 @@ const UserSchema = new Schema<IUser>({
   ]
 });
 
+// Indexing userId field
+UserSchema.index({ userId: 1 });
+
 const User = mongoose.model<IUser>('User', UserSchema);
 export default User;

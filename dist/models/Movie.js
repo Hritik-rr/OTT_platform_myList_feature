@@ -33,5 +33,6 @@ const MovieSchema = new mongoose_1.Schema({
     director: { type: String, required: true },
     actors: [{ type: String }]
 });
+// MovieSchema.index({ _id: 1 });
 const Movie = mongoose_1.default.model('Movie', MovieSchema);
 exports.default = Movie;

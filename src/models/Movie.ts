@@ -20,5 +20,6 @@ const MovieSchema = new Schema<IMovie>({
   actors: [{ type: String }]
 });
 
+// MovieSchema.index({ _id: 1 });
 const Movie = mongoose.model<IMovie>('Movie', MovieSchema);
 export default Movie;

@@ -63,6 +63,7 @@ const getMyListAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.getMyListAllUsers = getMyListAllUsers;
+// Functional Requirement: Controller functions Below
 const getMyListItemsByUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { userId } = req.params;
     const page = parseInt(req.query.page) || 1;
@@ -144,7 +145,7 @@ const deleteFromMyList = (req, res) => __awaiter(void 0, void 0, void 0, functio
         user.myList.splice(itemIndex, 1);
         yield user.save();
         res.status(200).json({
-            message: "Item removed from user's myList successfully.",
+            message: "Item removed from user's myList successfully. Remaining myList items below.",
             data: user.myList,
         });
     }

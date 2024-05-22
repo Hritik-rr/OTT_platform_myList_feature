@@ -46,5 +46,7 @@ const UserSchema = new mongoose_1.Schema({
         }
     ]
 });
+// Indexing userId field
+UserSchema.index({ userId: 1 });
 const User = mongoose_1.default.model('User', UserSchema);
 exports.default = User;

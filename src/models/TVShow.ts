@@ -30,5 +30,6 @@ const TVShowSchema = new Schema<ITVShow>({
   ]
 });
 
+// TVShowSchema.index({ _id: 1 });
 const TVShow = mongoose.model<ITVShow>('TVShow', TVShowSchema);
 export default TVShow;
