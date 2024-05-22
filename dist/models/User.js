@@ -23,9 +23,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// src/models/User.ts
 const mongoose_1 = __importStar(require("mongoose"));
+const uuid_1 = require("uuid");
 const UserSchema = new mongoose_1.Schema({
+    userId: { type: String, default: uuid_1.v4 }, // Generate UUID as default value for userId
     username: { type: String, required: true },
     preferences: {
         favoriteGenres: [{ type: String, enum: ['Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Romance', 'SciFi'] }],

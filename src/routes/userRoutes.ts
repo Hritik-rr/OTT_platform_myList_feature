@@ -1,8 +1,14 @@
-import { addUser } from "../controllers/UserController";
+import { addUser, getMyListItemsByUser, getMyListAllUsers, addToMyList, deleteFromMyList } from "../controllers/UserController";
 import { Router } from "express";
 
 const router = Router();
 
-const addNewUserRouter = router.post('/', addUser);
+router.post('/addNewUser', addUser);
+router.get('/myList', getMyListAllUsers);
 
-export default addNewUserRouter;
+// Functional Requirement: Routes
+router.get('/myList/:userId', getMyListItemsByUser); 
+router.patch('/modifyMyList/:userId', addToMyList);
+router.delete('/modifyMyList/:userId', deleteFromMyList);
+
+export default router;

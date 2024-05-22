@@ -31,7 +31,7 @@ describe('User Routes', () => {
 
     it('Should create a new User data via POST /addNewUser', async () => {
         const response = await request(app)
-        .post('/addNewUser')
+        .post('/users/addNewUser')
         .send({
             username: "Victoria Bekcham",
             preferences: {

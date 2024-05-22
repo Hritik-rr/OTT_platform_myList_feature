@@ -1,9 +1,9 @@
-// src/models/User.ts
 import mongoose, { Schema, Document } from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 import { Genre } from './GenreTypes';
 
 export interface IUser extends Document {
-  // userId: number;
+  userId: string; // Change userId type to string
   username: string;
   preferences: {
     favoriteGenres: Genre[];
@@ -15,13 +15,13 @@ export interface IUser extends Document {
     rating?: number;
   }>;
   myList: Array<{
-    itemId: string; // ID of the movie or TV show
-    itemType: 'Movie' | 'TVShow'; // Type to distinguish between Movie and TVShow
+    itemId: string; 
+    itemType: 'Movie' | 'TVShow'; 
   }>;
 }
 
 const UserSchema = new Schema<IUser>({
-  // userId: { type: Number },
+  userId: { type: String, default: uuidv4 }, // Generate UUID as default value for userId
   username: { type: String, required: true },
   preferences: {
     favoriteGenres: [{ type: String, enum: ['Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Romance', 'SciFi'] }],

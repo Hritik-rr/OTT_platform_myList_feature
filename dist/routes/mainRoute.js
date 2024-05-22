@@ -10,5 +10,5 @@ const userRoutes_1 = __importDefault(require("./userRoutes"));
 const router = express_1.default.Router();
 router.use('/tvShows', tvShowRoutes_1.default);
 router.use('/movies', movieRoutes_1.default);
-router.use('/addNewUser', userRoutes_1.default);
+router.use('/users', userRoutes_1.default);
 exports.default = router;
