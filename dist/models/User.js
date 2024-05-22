@@ -40,8 +40,8 @@ const UserSchema = new mongoose_1.Schema({
     ],
     myList: [
         {
-            itemId: { type: String, required: false },
-            itemType: { type: String, enum: ['Movie', 'TVShow'], required: false }
+            itemId: { type: String, required: true },
+            itemType: { type: String, enum: ['Movie', 'TVShow'], required: true }
         }
     ]
 });

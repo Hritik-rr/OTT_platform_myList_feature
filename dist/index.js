@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db_1 = __importDefault(require("./db"));
 const dotenv = __importStar(require("dotenv"));
-const movieRoutes_1 = __importDefault(require("./routes/movieRoutes"));
+const mainRoute_1 = __importDefault(require("./routes/mainRoute"));
 // To load env variable from .env file
 dotenv.config();
 // To establish a mongoDB connection
@@ -40,7 +40,7 @@ const port = process.env.PORT;
 app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
-app.use('/', movieRoutes_1.default);
+app.use('/', mainRoute_1.default);
 app.listen(port, () => {
     console.log(`Server is running on PORT ${port}`);
 });

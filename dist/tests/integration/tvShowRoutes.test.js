@@ -17,11 +17,11 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const mongodb_memory_server_1 = require("mongodb-memory-server");
 const mainRoute_1 = __importDefault(require("../../routes/mainRoute"));
-const Movie_1 = __importDefault(require("../../models/Movie"));
+const TVShow_1 = __importDefault(require("../../models/TVShow"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use('/', mainRoute_1.default);
-describe('Movie Routes', () => {
+describe('TV Show Routes', () => {
     let mongoServer;
     beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
         mongoServer = yield mongodb_memory_server_1.MongoMemoryServer.create();
@@ -34,25 +34,38 @@ describe('Movie Routes', () => {
         yield mongoServer.stop();
     }));
     beforeEach(() => __awaiter(void 0, void 0, void 0, function* () {
-        yield Movie_1.default.deleteMany({});
+        yield TVShow_1.default.deleteMany({});
     }));
-    it('Should create a new movie data via POST /movies', () => __awaiter(void 0, void 0, void 0, function* () {
+    it('Should create a new TV Show data via POST /tvShows', () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield (0, supertest_1.default)(app)
-            .post('/movies')
+            .post('/tvShows')
             .send({
-            title: "Inception",
-            description: "A thief who enters the dreams of others to steal their secrets from their subconscious.",
-            genres: ["Action", "SciFi"],
-            releaseDate: "2010-07-16",
-            director: "Christopher Nolan",
-            actors: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]
+            title: "Example TV Show",
+            description: "This is an example TV show description.",
+            genres: ["Drama", "SciFi"],
+            episodes: [
+                {
+                    episodeNumber: 1,
+                    seasonNumber: 1,
+                    releaseDate: "2024-01-01",
+                    director: "Jane Doe",
+                    actors: ["John Smith", "Mary Johnson"]
+                },
+                {
+                    episodeNumber: 2,
+                    seasonNumber: 1,
+                    releaseDate: "2024-01-08",
+                    director: "John Doe",
+                    actors: ["John Smith", "Mary Johnson"]
+                }
+            ]
         });
         expect(response.status).toBe(201);
         expect(response.body.data).toHaveProperty('_id');
-        expect(response.body.data.title).toBe("Inception");
-        expect(response.body.data.description).toBe("A thief who enters the dreams of others to steal their secrets from their subconscious.");
-        expect(response.body.data.genres).toEqual(["Action", "SciFi"]);
-        expect(response.body.data.director).toBe("Christopher Nolan");
-        expect(response.body.data.actors).toEqual(["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]);
+        expect(response.body.data.title).toBe("Example TV Show");
+        expect(response.body.data.description).toBe("This is an example TV show description.");
+        expect(response.body.data.genres).toEqual(["Drama", "SciFi"]);
+        // expect(response.body.data.director).toBe("Christopher Nolan");
+        // expect(response.body.data.actors).toEqual(["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]);
     }));
 });

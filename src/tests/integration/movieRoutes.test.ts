@@ -2,17 +2,16 @@ import request from 'supertest';
 import express from 'express';
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import router from '../../routes/movieRoutes';
+import routes from '../../routes/mainRoute';
 import Movie from '../../models/Movie';
 
 const app = express();
 app.use(express.json());
-app.use('/', router);
+app.use('/', routes);
 
 describe('Movie Routes', () => {
     let mongoServer: MongoMemoryServer;
 
-    // jest.setTimeout(30000); // Set timeout to 30 seconds
     beforeAll(async () => {
         mongoServer = await MongoMemoryServer.create();
         const uri = mongoServer.getUri();

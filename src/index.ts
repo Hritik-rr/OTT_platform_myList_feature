@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import connectDB from './db';
 import * as dotenv from 'dotenv';
-import Routes from './routes/movieRoutes';
+import Routes from './routes/mainRoute';
 
 // To load env variable from .env file
 dotenv.config();

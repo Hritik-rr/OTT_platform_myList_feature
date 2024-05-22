@@ -3,6 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 import { Genre } from './GenreTypes';
 
 export interface IUser extends Document {
+  // userId: number;
   username: string;
   preferences: {
     favoriteGenres: Genre[];
@@ -20,6 +21,7 @@ export interface IUser extends Document {
 }
 
 const UserSchema = new Schema<IUser>({
+  // userId: { type: Number },
   username: { type: String, required: true },
   preferences: {
     favoriteGenres: [{ type: String, enum: ['Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Romance', 'SciFi'] }],
@@ -34,8 +36,8 @@ const UserSchema = new Schema<IUser>({
   ],
   myList: [
     {
-      itemId: { type: String, required: false },
-      itemType: { type: String, enum: ['Movie', 'TVShow'], required: false }
+      itemId: { type: String, required: true },
+      itemType: { type: String, enum: ['Movie', 'TVShow'], required: true }
     }
   ]
 });

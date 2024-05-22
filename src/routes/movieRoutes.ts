@@ -3,6 +3,6 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.post('/movies', addMovie);
+const addMovieRouter = router.post('/', addMovie);
 
-export default router;
+export default addMovieRouter;
