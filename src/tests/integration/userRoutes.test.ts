@@ -85,8 +85,7 @@ describe('User Routes', () => {
 
         // Formatting the watchedOn dates before comparing
         const formattedWatchHistory = response.body.data.watchHistory.map((entry: any) => ({
-            ...entry,
-            watchedOn: formatISO(new Date(entry.watchedOn), { representation: 'date' })
+            ...entry, watchedOn: formatISO(new Date(entry.watchedOn), { representation: 'date' })
         }));
 
         expect(formattedWatchHistory).toEqual([
@@ -104,6 +103,7 @@ describe('User Routes', () => {
         ]);
     });
 
+    
     it('Should retrieve user myList via GET /users/myList/:userId', async () => {
         // Step 1: Adding a movie to the collection
         const movieResponse = await request(app)
@@ -120,7 +120,7 @@ describe('User Routes', () => {
         expect(movieResponse.status).toBe(201);
         const movie = movieResponse.body.data;
 
-        // Step 2: Adding a TV show to the collection
+        // Step 2: Adding a TVShow to the collection
         const tvShowResponse = await request(app)
             .post('/tvShows')
             .send({
