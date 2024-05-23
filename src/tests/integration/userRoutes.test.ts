@@ -120,7 +120,7 @@ describe('User Routes', () => {
         expect(movieResponse.status).toBe(201);
         const movie = movieResponse.body.data;
 
-        // Step 2: Adding a TV show to the collection
+        // Step 2: Adding a TVShow to the collection
         const tvShowResponse = await request(app)
             .post('/tvShows')
             .send({
