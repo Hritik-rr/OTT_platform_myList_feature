@@ -88,7 +88,7 @@ describe('User Routes', () => {
                 itemType: "TVShow"
             }
         ]);
-        // Format the watchedOn dates before comparing
+        // Formatting the watchedOn dates before comparing
         const formattedWatchHistory = response.body.data.watchHistory.map((entry) => (Object.assign(Object.assign({}, entry), { watchedOn: (0, date_fns_1.formatISO)(new Date(entry.watchedOn), { representation: 'date' }) })));
         expect(formattedWatchHistory).toEqual([
             {
@@ -105,7 +105,7 @@ describe('User Routes', () => {
         ]);
     }));
     it('Should retrieve user myList via GET /users/myList/:userId', () => __awaiter(void 0, void 0, void 0, function* () {
-        // Step 1: Add a movie to the collection
+        // Step 1: Adding a movie to the collection
         const movieResponse = yield (0, supertest_1.default)(app)
             .post('/movies')
             .send({
@@ -118,7 +118,7 @@ describe('User Routes', () => {
         });
         expect(movieResponse.status).toBe(201);
         const movie = movieResponse.body.data;
-        // Step 2: Add a TV show to the collection
+        // Step 2: Adding a TV show to the collection
         const tvShowResponse = yield (0, supertest_1.default)(app)
             .post('/tvShows')
             .send({
@@ -210,7 +210,6 @@ describe('User Routes', () => {
         });
     }));
     it('Should modify user\'s myList by adding values via PATCH /users/modifyMyList/:userId', () => __awaiter(void 0, void 0, void 0, function* () {
-        // Prepare the user's data or fetch it from the database
         const user = {
             userId: 'd313eea9-b327-46c1-a9c6-057464e781de',
             username: 'Test User',
@@ -240,25 +239,22 @@ describe('User Routes', () => {
                 }
             ]
         };
-        // Insert the user data into the database or update it if already exists
+        // Finding the data on the basis of userId
         yield User_1.default.findOneAndUpdate({ userId: user.userId }, user, { upsert: true });
-        // Prepare the request body
+        // JSON request body
         const requestBody = {
             itemId: '664dd3e2d3023d5c869bd2b1',
             itemType: 'TVShow'
         };
-        // Send PATCH request to modify user's myList
+        // Making PATCH request to modify user's myList
         const response = yield (0, supertest_1.default)(app)
             .patch(`/users/modifyMyList/${user.userId}`)
             .send(requestBody);
-        // Assertions
         expect(response.status).toBe(200);
         expect(response.body.message).toBe("Item added to user's myList successfully.");
-        expect(response.body.data).toHaveLength(3); // Assuming 3 items in the user's myList after modification
-        // You may add more specific assertions based on your requirements
+        expect(response.body.data).toHaveLength(3);
     }));
     it('Should modify user\'s myList by deleting values via PATCH /users/modifyMyList/:userId', () => __awaiter(void 0, void 0, void 0, function* () {
-        // Prepare the user's data or fetch it from the database
         const user = {
             userId: 'd313eea9-b327-46c1-a9c6-057464e781de',
             username: 'Test User',
@@ -292,21 +288,20 @@ describe('User Routes', () => {
                 }
             ]
         };
-        // Insert the user data into the database or update it if already exists
+        // Finding the data on the basis of userId
         yield User_1.default.findOneAndUpdate({ userId: user.userId }, user, { upsert: true });
-        // Prepare the request body
+        // JSON request body
         const requestBody = {
             itemId: '664dd3e2d3023d5c869bd2b1',
             itemType: 'TVShow'
         };
-        // Send DELETE request to remove item from user's myList
+        // Sending the DELETE request to remove item from user's myList
         const response = yield (0, supertest_1.default)(app)
             .delete(`/users/modifyMyList/${user.userId}`)
             .send(requestBody);
         // Assertions
         expect(response.status).toBe(200);
         expect(response.body.message).toBe("Item removed from user's myList successfully. Remaining myList items below.");
-        expect(response.body.data).toHaveLength(2); // Assuming 2 items remain in the user's myList after removal
-        // You may add more specific assertions based on your requirements
+        expect(response.body.data).toHaveLength(2);
     }));
 });
