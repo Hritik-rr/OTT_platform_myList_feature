@@ -1,0 +1,14 @@
+name : Testing
+
+on:
+  push:
+    branches:
+      -'dev'
+
+jobs:
+  integration_testing:
+    runs_on: ubuntu_latest
+
+  steps:
+    - name: Hello Step
+      run: echo "Hello World"
