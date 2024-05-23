@@ -1,17 +1,17 @@
-name : Testing
+name: Testing
 
 on:
   push:
     branches:
-      -'dev'
+      - dev
   pull_request:
     branches:
-      -'dev'    
+      - dev
 
 jobs:
   integration_testing:
-    runs_on: ubuntu_latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Hello Step
-      run: echo "Hello World"
+    steps:
+      - name: Hello Step
+        run: echo "Hello World"
