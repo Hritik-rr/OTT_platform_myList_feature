@@ -48,9 +48,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1  
 
-      - name: Check Existing AWS CLI Version (Optional)
+      - name: Install EB CLI (Alternative)
         run: |
-          aws --version          
+          pip install awsebcli
+                
 
       - name: Upload Application to S3 
         env:  # Use environment variables for AWS credentials
