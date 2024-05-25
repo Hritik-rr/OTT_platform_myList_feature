@@ -38,7 +38,10 @@ jobs:
       - name: Create Deployment Archive (app.zip)
         run: |
           cd dist  # Assuming build output is in the "dist" folder
+          echo "Current directory: $(pwd)"  # Print the current working directory
+          ls -l  # List files in the current directory
           zip -r ../app.zip . --exclude "node_modules/**" --exclude ".env" --exclude ".git*"
+    
 
       - name: Configure AWS CLI
         uses: aws-actions/configure-aws-credentials@v2
