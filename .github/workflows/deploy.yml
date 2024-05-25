@@ -53,6 +53,10 @@ jobs:
           pip install --upgrade awsebcli
           eb --version
 
+      - name: Check Existing AWS CLI Version (Optional)
+        run: |
+          aws --version          
+
       - name: Upload Application to S3 
         env:  # Use environment variables for AWS credentials
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
