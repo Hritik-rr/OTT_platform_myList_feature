@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '20'  # Adjust based on your project's requirements
 
-    #   - name: Cache Node.js modules (Increase cache invalidation if needed)
-    #     uses: actions/cache@v4
-    #     with:
-    #       path: ~/.npm
-    #       key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    #       restore-keys: |
-    #         ${{ runner.os }}-node-
+      - name: Cache Node.js modules (Increase cache invalidation if needed)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install Dependencies
         run: npm ci  # Use npm ci for a deterministic installation
