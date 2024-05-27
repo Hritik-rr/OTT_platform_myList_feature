@@ -3,7 +3,7 @@ name: Deploy to AWS Elastic Beanstalk server
 on:
   push:
     branches:
-      - dev
+      - dev-2
 
 jobs:
   deploy:
