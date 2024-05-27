@@ -27,7 +27,7 @@ jobs:
     
       - name: Build Command
         env:
-         MONGODB_URI: ${{ secrets.MONGODB_URI }} 
+         PORT: ${{ secrets.PROD_ENV_FILE }} 
         run: |
           npm run build
           npm run dev
