@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - dev-2
-      - dev
 
 jobs:
   deploy:
@@ -32,6 +31,7 @@ jobs:
         run: |
           zip -r deploy.zip . --exclude "node_modules/**" -x "*.git*"
 
+          
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
         with:
