@@ -32,9 +32,5 @@ jobs:
         run: |
           touch .env
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
-
-      - name: deploy setup 
-        run: |
-          cd ./dist
-          pm2 restart BackendAPI
+          
            
