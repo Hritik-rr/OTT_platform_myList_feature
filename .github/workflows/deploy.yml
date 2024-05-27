@@ -27,7 +27,7 @@ jobs:
     
       - name: Build Command
         env:
-         PORT: ${{ secrets.PROD_ENV_FILE }} 
+         PORT: 3000 
         run: |
           npm run build
           npm run dev
