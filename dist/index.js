@@ -27,13 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const db_1 = __importDefault(require("./db"));
 const dotenv = __importStar(require("dotenv"));
 const mainRoute_1 = __importDefault(require("./routes/mainRoute"));
 // To load env variable from .env file
 dotenv.config();
 // To establish a mongoDB connection
-(0, db_1.default)();
+// connectDB();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 const port = process.env.PORT;

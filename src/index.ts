@@ -7,7 +7,7 @@ import Routes from './routes/mainRoute';
 dotenv.config();
 
 // To establish a mongoDB connection
-connectDB();
+// connectDB();
 
 const app = express();
 app.use(express.json());
