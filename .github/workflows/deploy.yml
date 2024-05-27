@@ -13,16 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'  # Adjust based on your project's requirements
 
-
       - name: Install Dependencies
         run: npm ci  # Use npm ci for a deterministic installation
-
 
       - name: Build project
         env:
@@ -30,9 +27,8 @@ jobs:
         run: |
           npm run build  
 
-
       - name: Install Configuration settings
         run: |
           touch .env
-          echo "${{ secrets.PROD_ENV_FILE }}" > .env
+          echo "${{ secrets.PROD_ENV_FILE }}"
            
