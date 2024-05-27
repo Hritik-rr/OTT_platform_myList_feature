@@ -23,7 +23,10 @@ jobs:
           cache: 'npm' 
 
       - name: Install Dependencies and Configuration settings
-        run: npm ci 
+        run: npm ci
+    
+      - name: Build Command
+        run: npm run build
 
       - name: Install Configuration settings
         run: |
