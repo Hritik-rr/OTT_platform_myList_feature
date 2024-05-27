@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate Deployment Package (deploy.zip)
         run: |
-          zip -r deploy.zip . --exclude "node_modules/**" --exclude ".env" -x "*.git*"
+          zip -r deploy.zip . --exclude "node_modules/**" -x "*.git*"
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
@@ -38,7 +38,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: mylist-app
-          environment_name: Mylist-app-env-1
+          environment_name: Mylist-app-env
           version_label: ${{ github.sha }}
           region: ap-south-1
           deployment_package: deploy.zip
