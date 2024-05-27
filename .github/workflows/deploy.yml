@@ -26,11 +26,13 @@ jobs:
         run: npm ci
     
       - name: Build Command
-        run: npm run build
+        run: |
+          npm run build
+          npm run dev
 
       - name: Install Configuration settings
         run: |
           touch .env
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
-          
+
            
