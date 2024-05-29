@@ -28,12 +28,12 @@ jobs:
       - name: Build Command
         run: npm run build
         
-      - name: Setup Command
-        env:
-          PORT: 3000 
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run: |
-          npm run dev
+      # - name: Setup Command
+      #   env:
+      #     PORT: 3000 
+      #     MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      #   run: |
+      #     npm run dev
 
       - name: Install Configuration settings
         run: |
