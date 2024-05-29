@@ -146,14 +146,14 @@ export const deleteFromMyList = async (req: Request, res: Response) => {
             return res.status(404).json({ message: "User not found." });
         }
 
-        // Check if item exists in myList
+        // Checking if item exists in myList
         const itemIndex = user.myList.findIndex((item) => item.itemId === itemId && item.itemType === itemType);
 
         if (itemIndex === -1) {
             return res.status(400).json({ message: "Item does not exist in user's myList." });
         }
 
-        // Remove item from myList
+        // Removing item from myList
         user.myList.splice(itemIndex, 1);
         await user.save();
         

@@ -136,12 +136,12 @@ const deleteFromMyList = (req, res) => __awaiter(void 0, void 0, void 0, functio
         if (!user) {
             return res.status(404).json({ message: "User not found." });
         }
-        // Check if item exists in myList
+        // Checking if item exists in myList
         const itemIndex = user.myList.findIndex((item) => item.itemId === itemId && item.itemType === itemType);
         if (itemIndex === -1) {
             return res.status(400).json({ message: "Item does not exist in user's myList." });
         }
-        // Remove item from myList
+        // Removing item from myList
         user.myList.splice(itemIndex, 1);
         yield user.save();
         res.status(200).json({
