@@ -1,0 +1,39 @@
+name: Deploy to AWS Elastic Beanstalk server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    strategy:
+        matrix: 
+            node-version: [20.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}  
+          cache: 'npm' 
+
+      - name: Install Dependencies and Configuration settings
+        run: npm ci
+    
+      - name: Build Command
+        run: npm run build
+
+      - name: Install Configuration settings
+        run: |
+          touch .env
+          echo "${{ secrets.PROD_ENV_FILE }}" > .env
+
+      # - name: Restart Express Server
+      #   run: pm2 restart BackendAPI
+
+           

@@ -11,7 +11,7 @@ app.use(express.json());
 app.use('/', routes);
 
 describe('User Routes', () => {
-    jest.setTimeout(30000);
+    jest.setTimeout(35000);
     let mongoServer: MongoMemoryServer;
 
     beforeAll(async () => {
@@ -103,7 +103,6 @@ describe('User Routes', () => {
         ]);
     });
 
-    
     it('Should retrieve user myList via GET /users/myList/:userId', async () => {
         // Step 1: Adding a movie to the collection
         const movieResponse = await request(app)

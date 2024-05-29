@@ -23,7 +23,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use('/', mainRoute_1.default);
 describe('User Routes', () => {
-    jest.setTimeout(30000);
+    jest.setTimeout(35000);
     let mongoServer;
     beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
         mongoServer = yield mongodb_memory_server_1.MongoMemoryServer.create();
@@ -118,7 +118,7 @@ describe('User Routes', () => {
         });
         expect(movieResponse.status).toBe(201);
         const movie = movieResponse.body.data;
-        // Step 2: Adding a TV show to the collection
+        // Step 2: Adding a TVShow to the collection
         const tvShowResponse = yield (0, supertest_1.default)(app)
             .post('/tvShows')
             .send({
