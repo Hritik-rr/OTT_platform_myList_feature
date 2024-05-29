@@ -5,8 +5,8 @@ import userRoutes from './userRoutes';
 
 const router = express.Router();
 
-router.use('/stage-ott/tvShows', tvShowRoutes);
-router.use('/stage-ott/movies', movieRoutes);
-router.use('/stage-ott/users', userRoutes);
+router.use('/tvShows', tvShowRoutes);
+router.use('/movies', movieRoutes);
+router.use('/users', userRoutes);
 
 export default router;
