@@ -1,17 +1,7 @@
-![Screenshot 2024-05-30 121211](https://github.com/Hritik-rr/STAGE_OTT_myList_feature/assets/41600508/dee40d05-da69-481e-b4e5-09fe2cd383b3)# STAGE_OTT_myList_feature
+# STAGE_OTT_myList_feature
 
 <a name="readme-top"></a>
-
-
-<!-- PROJECT LOGO -->
-<div align="center">
-<h3 align="center">Setup & Jumpstart</h3>
-  <br />
-<p>The “My List” feature enhances our OTT platform by allowing users to save their favorite movies and TV shows to a personalized list. This feature requires backend services for managing the user’s list, including adding, removing, and listing saved items.
-  </p>
-</div>
-
-
+<br />
 
 <!-- TABLE OF CONTENTS -->
 ## 🚩 Table of Contents
@@ -89,7 +79,7 @@ _Below is an example of how you can instruct your audience on installing and set
       ```
     * This command will establish a MongoDB connection, create collections `tvShow`, `movies` & `users` and populate data within in.
       ![Populating data in different collections](https://github.com/Hritik-rr/STAGE_OTT_myList_feature/assets/41600508/e347802c-d6cf-4640-948c-5219d232da0e)
-    
+    <br />
     
     * This is what your MongoDB cluster would look like after running the data script:
       ![MongoDB Cluster](https://github.com/Hritik-rr/STAGE_OTT_myList_feature/assets/41600508/1d0b96d4-5739-4168-bda6-ba8db168f64e)
