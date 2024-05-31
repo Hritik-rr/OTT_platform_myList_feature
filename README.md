@@ -21,7 +21,7 @@
 
 This section provides step-by-step instructions on how to set up the backend service locally for development and testing purposes. Follow these guidelines to get your environment ready for implementing the “My List” feature. The Project uses Typescript language using ExpressJS Framework. For Database purposes, we are using MongoDB and for relational modeling and ORM purposes, Mongoose is used.
 
-## Prerequisites
+### Prerequisites
 
 For package manager, npm is used in the project, so it is required that you must have npm on your system.
 * npm
@@ -29,7 +29,7 @@ For package manager, npm is used in the project, so it is required that you must
   ~ npm install npm@latest -g
   ```
 
-## Installation
+### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
