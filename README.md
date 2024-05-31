@@ -6,9 +6,9 @@
 <!-- TABLE OF CONTENTS -->
 ## 🚩 Table of Contents
 
-- [Getting Started & Setup](#-Getting-Started-&-Setup)  
-- [Prerequisites](#-prerequisites)  
-- [Installation](#-installation)  
+- [Getting Started & Setup](#-getting-started-&-setup)
+  - [Prerequisites](#-prerequisites)  
+  - [Installation](#-installation)  
 - [Scripts](#-scripts)  
 - [Routes](#-routes)  
 - [Additional Information](#-additional-information)  <br />
