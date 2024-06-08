@@ -15,6 +15,7 @@ export const addMovie = async (req: Request, res: Response) => {
         actors
       });
   
+      // testing comment
       await newMovie.save();
       res.status(201).json({
         message: "New data added in Movies collection.",
