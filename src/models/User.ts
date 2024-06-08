@@ -22,7 +22,7 @@ export interface IUser extends Document {
 
 const UserSchema = new Schema<IUser>({
   // Generates UUID(default value) for userId  
-  userId: { type: String, default: uuidv4 }, 
+  userId: { type: String, default: uuidv4}, 
   username: { type: String, required: true },
   preferences: {
     favoriteGenres: [{ type: String, enum: ['Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Romance', 'SciFi'] }],
@@ -44,6 +44,10 @@ const UserSchema = new Schema<IUser>({
 });
 
 // Indexing userId field
-UserSchema.index({ userId: 1 });
+// UserSchema.index({ userId: 1 });
+
+// Compound indexing on itemId and ItemType under myList array 
+UserSchema.index({ 'myList.itemType': 1, 'myList.itemId': 1 });
+
 const User = mongoose.model<IUser>('User', UserSchema);
 export default User;

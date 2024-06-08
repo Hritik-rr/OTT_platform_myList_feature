@@ -48,6 +48,8 @@ const UserSchema = new mongoose_1.Schema({
     ]
 });
 // Indexing userId field
-UserSchema.index({ userId: 1 });
+// UserSchema.index({ userId: 1 });
+// Compound indexing on itemId and ItemType under myList array 
+UserSchema.index({ 'myList.itemType': 1, 'myList.itemId': 1 });
 const User = mongoose_1.default.model('User', UserSchema);
 exports.default = User;

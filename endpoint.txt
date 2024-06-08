@@ -1,0 +1,81 @@
+PATCH - addToMyList
+
+http://localhost:3000/users/modifyMyList/5ce82076-c2c8-4c98-b512-fb2b727f30f9
+
+{
+    "itemId": "66629a70d72208d31eab5c7f",
+    "itemType": "TvShow" 
+}
+
+GET - getMyListByUser
+
+http://localhost:3000/users/myList/5ce82076-c2c8-4c98-b512-fb2b727f30f9
+
+
+GET - getMyListAllUsers
+
+http://localhost:3000/users/myList/
+
+
+DELETE - deleteFromMyList
+
+http://localhost:3000/users/modifyMyList/1c9207a1-5f33-48c0-8d14-823f479bade7
+
+{
+  "itemId": "665709ba93da0b6486c573ed",
+  "itemType": "Movie"
+}
+
+POST - addMovies
+
+http://localhost:3000/movies
+
+{
+  "title": "Bang Bang",
+  "description": "A man tries to find the truth about human exitence.",
+  "genres": ["Action", "SciFi"],
+  "releaseDate": "2016-07-16",
+  "director": "Christopher Nolan",
+  "actors": ["Keanu Reeves", "Ellen Page"]
+}
+
+POST - addTVShows
+
+http://localhost:3000/tvShows
+
+{
+  "title": "Flash",
+  "description": "This is an example TV show description.",
+  "genres": ["Drama", "Fantasy", "Action"],
+  "episodes": [
+    {
+      "episodeNumber": 1,
+      "seasonNumber": 1,
+      "releaseDate": "2024-01-01",
+      "director": "Jane Doe",
+      "actors": ["John Smith", "Mary Johnson"]
+    },
+    {
+      "episodeNumber": 2,
+      "seasonNumber": 1,
+      "releaseDate": "2024-01-08",
+      "director": "John Doe",
+      "actors": ["John Smith", "Mary Johnson"]
+    }
+  ]
+}
+
+
+POST - addNewUser
+
+http://localhost:3000/addNewUser
+
+{
+  "username": "Akshara Pillai",
+  "preferences": {
+    "favoriteGenres": ["Action", "SciFi"],
+    "dislikedGenres": ["Romance", "Comedy"]
+  },
+  "watchHistory": [],
+  "myList": []
+}

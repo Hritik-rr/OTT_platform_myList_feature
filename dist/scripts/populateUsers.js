@@ -68,7 +68,7 @@ const populateUsers = () => __awaiter(void 0, void 0, void 0, function* () {
         yield User_1.default.deleteMany({});
         console.log('Cleared existing data');
         yield User_1.default.insertMany(usersData);
-        console.log('Data script for movies successfully completed');
+        console.log('Data script for users successfully completed');
         yield mongoose_1.default.connection.close();
         console.log('Database connection closed');
     }

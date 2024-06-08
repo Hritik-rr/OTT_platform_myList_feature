@@ -8,10 +8,10 @@
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "build": "tsc",
     "test": "jest",
-    "populateTvShow": "node '/mnt/f/Company Assignment(s)/STAGE_OTT/STAGE_OTT_myList_feature/dist/scripts/populateTvShows.js'",
-    "populateMovies": "node '/mnt/f/Company Assignment(s)/STAGE_OTT/STAGE_OTT_myList_feature/dist/scripts/populateMovies.js'",
-    "populateUsers": "node '/mnt/f/Company Assignment(s)/STAGE_OTT/STAGE_OTT_myList_feature/dist/scripts/populateUsers.js'",
-    "populateAll": "npm run populateTvShow && npm run populateMovies && npm run populateUsers"    
+    "populateTvShow": "node '/Users/hritikranjan/Documents/Code/Tasks/Stage_Ott/STAGE_OTT_myList_feature/dist/scripts/populateTvShows.js'",
+    "populateMovies": "node '/Users/hritikranjan/Documents/Code/Tasks/Stage_Ott/STAGE_OTT_myList_feature/dist/scripts/populateMovies.js'",
+    "populateUsers": "node '/Users/hritikranjan/Documents/Code/Tasks/Stage_Ott/STAGE_OTT_myList_feature/dist/scripts/populateUsers.js'",
+    "populateAll": "npm run populateTvShow && npm run populateMovies && npm run populateUsers"
   },
   "keywords": [],
   "author": "",

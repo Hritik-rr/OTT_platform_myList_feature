@@ -59,7 +59,7 @@ const populateUsers = async () => {
         console.log('Cleared existing data');
 
         await User.insertMany(usersData);
-        console.log('Data script for movies successfully completed');
+        console.log('Data script for users successfully completed');
 
         await mongoose.connection.close();
         console.log('Database connection closed');
