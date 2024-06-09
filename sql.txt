@@ -1,0 +1,14 @@
+myList {
+    itemType
+    itemId
+    userId
+}
+
+User table : assetType, assetId
+
+
+ select * from myList innerJoin User on User.userId = myList.itemId
+ select 
+
+
+build a schema for the myList so that a user can get access to the Movie and TVShow database.
