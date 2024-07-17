@@ -15,6 +15,10 @@
 <br />
 
 
+<!-- ABOUT THE PROJECT -->
+## 🏳️ Project Overview 
+This project aims to enhance your [OTT platform](https://x.com/STAGEdotin) by adding a new feature called "My List." This feature allows users to save their favorite movies and TV shows to a personalized list, making accessing and managing their preferred content easier. 
+The project was built as an open challenge by an Indian OOT Platform startup, for their hiring spree.
 
 <!-- ABOUT THE PROJECT -->
 ## 🔧 Getting Started & Setup 
